@@ -3,22 +3,23 @@ package co.com.mspharmarater.infrastructure.driveradapter.postgres;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder(toBuilder = true)
-@Table(name = "payment_method")
 public class Pharma {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_payment_method")
+    @Column(name = "id")
     private Long id;
     @Column(name = "name")
     private String name;
@@ -26,12 +27,19 @@ public class Pharma {
     private float price;
     @Column(name = "image")
     private String image;
-    @Column(name = "address")
-    private String address;
-    @Column(name = "origin")
+    @Column(name = "farmacia")
     private String origin;
-
-
-
+    @Column(name = "ciudad")
+    private String city;
+    @Column(name = "nombre")
+    private String nameMarket;
+    @Column(name = "direccion")
+    private String address;
+//    @Column(name = "ubicacion")
+//    private String location;
+    @Column(name = "latitud")
+    private String latitude;
+    @Column(name = "longitud")
+    private String longitude;
 
 }
