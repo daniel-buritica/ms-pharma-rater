@@ -2,7 +2,7 @@ package co.com.mspharmarater.infrastructure.driveradapter.postgres;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -22,13 +22,14 @@ public interface PharmaRepository extends JpaRepository<Pharma, Integer> {
             "\t, f.ciudad\n" +
             "\t, f.nombre\n" +
             "\t, f.direccion\n" +
+            "\t, f.ubicacion\n" +
             "\t, f.latitud\n" +
             "\t, f.longitud\n" +
             "from product p\n" +
             "join farmacias f on p.origin = f.farmacia \n" +
             "where p.name ~* :name \n" +
-            "and ST_DWithin(f.ubicacion, 'POINT(:longitude :latitude)', :distance)";
+            "and ST_DWithin(f.ubicacion, ST_MakePoint(:longitude, :latitude), :distance)";
 
     @Query(value = SQL_QUERY, nativeQuery = true)
-    List<Pharma> findProductsByNameAndDistance(String name, String longitude, String latitude, int distance);
+    List<Pharma> findProductsByNameAndDistance(String name, double longitude, double latitude, int distance);
 }

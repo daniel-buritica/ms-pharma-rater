@@ -14,7 +14,7 @@ public class PharmaUseCase  {
 
      final PharmaModelRepository pharmaModelRepository;
 
-    public List<ResponseMs> searchProducts(String name, String longitude, String latitude, int distance){
+    public List<ResponseMs> searchProducts(String name, double longitude, double latitude, int distance){
         return pharmaModelRepository.searchProducts(name, longitude, latitude, distance);
     }
 

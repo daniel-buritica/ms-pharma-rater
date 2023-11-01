@@ -35,8 +35,8 @@ public class Pharma {
     private String nameMarket;
     @Column(name = "direccion")
     private String address;
-//    @Column(name = "ubicacion")
-//    private String location;
+    @Column(name = "ubicacion")
+    private String location;
     @Column(name = "latitud")
     private String latitude;
     @Column(name = "longitud")

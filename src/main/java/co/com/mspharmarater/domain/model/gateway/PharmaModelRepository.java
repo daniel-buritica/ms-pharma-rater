@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface PharmaModelRepository {
 
-    List<ResponseMs> searchProducts(String name, String longitude, String latitude, int distance);
+    List<ResponseMs> searchProducts(String name, double longitude, double latitude, int distance);
 
 }

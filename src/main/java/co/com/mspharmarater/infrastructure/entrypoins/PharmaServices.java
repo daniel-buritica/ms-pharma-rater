@@ -29,8 +29,8 @@ public class PharmaServices {
 
     @GetMapping("")
     public ResponseEntity<List<ResponseMs>> getProducts(@RequestParam(name = "name") String name,
-                                                       @RequestParam(name = "longitude") String longitude,
-                                                       @RequestParam(name = "latitude") String latitude,
+                                                       @RequestParam(name = "longitude") double longitude,
+                                                       @RequestParam(name = "latitude") double latitude,
                                                        @RequestParam(name = "distance") int distance){
         var data = pharmaUseCase.searchProducts(name, longitude, latitude, distance);
         return new ResponseEntity<>(data, HttpStatus.OK);

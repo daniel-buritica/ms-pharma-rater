@@ -19,7 +19,7 @@ public class PharmaImpl implements PharmaModelRepository {
 
 
     @Override
-    public List<ResponseMs> searchProducts(String name, String longitude, String latitude, int distance) {
+    public List<ResponseMs> searchProducts(String name, double longitude, double latitude, int distance) {
 
         return pharmaRepository
                 .findProductsByNameAndDistance(name, longitude, latitude, distance)

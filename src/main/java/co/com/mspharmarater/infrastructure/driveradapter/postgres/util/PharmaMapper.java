@@ -21,7 +21,7 @@ public class PharmaMapper implements MapperGeneric<Pharma, ResponseMs> {
                 .city(model.getCity())
                 .nameMarket(model.getNameMarket())
                 .address(model.getAddress())
-//                .location(model.getLocation())
+                .location(model.getLocation())
                 .build();
     }
 
@@ -35,7 +35,7 @@ public class PharmaMapper implements MapperGeneric<Pharma, ResponseMs> {
                 .city(entity.getCity())
                 .nameMarket(entity.getNameMarket())
                 .address(entity.getAddress())
-//                .location(entity.getLocation())
+                .location(entity.getLocation())
                 .score(null)
                 .longitude(entity.getLongitude())
                 .latitude(entity.getLatitude())

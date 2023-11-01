@@ -20,7 +20,7 @@ public class ResponseMs {
     private String city;
     private String nameMarket;
     private String address;
-//    private String location;
+    private String location;
     private String score;
     private String longitude;
     private String latitude;
